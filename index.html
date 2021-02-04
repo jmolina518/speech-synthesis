@@ -49,15 +49,14 @@
 
     function setVoice() {
       msg.voice = voices.find(voice => voice.name === this.value);
-      toggle()
+      toggle();
     }
 
     function toggle(startOver = true) {
       speechSynthesis.cancel();
       if (startOver) {
-        speechSynthesis.speak(msg)
+        speechSynthesis.speak(msg);
       }
-      speechSynthesis.speak(msg);
     }
 
     function setOption() {
@@ -71,7 +70,6 @@
     options.forEach(option => option.addEventListener('change', setOption));
     speakButton.addEventListener('click', toggle);
     stopButton.addEventListener('click', () => toggle(false));
-
 
   </script>
 
